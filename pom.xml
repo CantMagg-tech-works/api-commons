@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>api-commons</groupId>
 	<artifactId>api-commons</artifactId>
-	<version>3.0.0-SNAPSHOT</version>
+	<version>4.0.0-SNAPSHOT</version>
 	<name>api-commons</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -56,16 +56,29 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<distributionManagement>
+	<!-- Configuración del repositorio -->
+	<repositories>
 		<repository>
 			<id>github</id>
 			<url>https://maven.pkg.github.com/CantMagg-tech-works/api-commons</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
 		</repository>
-	</distributionManagement>
+	</repositories>
 
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<repositoryId>github</repositoryId>
+					<url>https://maven.pkg.github.com/CantMagg-tech-works/api-commons</url>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
