@@ -56,16 +56,16 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<!-- Configuración del repositorio -->
-	<repositories>
+	<distributionManagement>
 		<repository>
 			<id>github</id>
 			<url>https://maven.pkg.github.com/CantMagg-tech-works/api-commons</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
 		</repository>
-	</repositories>
+		<snapshotRepository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/CantMagg-tech-works/api-commons</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 
 	<build>
